@@ -71,10 +71,10 @@ export default function App() {
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
       
-      <div className="h-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-start md:justify-center p-4 md:p-8 gap-6 md:gap-12 relative z-10">
+      <div className="min-h-full max-w-lg mx-auto flex flex-col items-center justify-start p-4 py-8 md:p-8 gap-8 relative z-10 w-full">
         
         {/* Left Section: Profile & Identity */}
-        <div className="flex flex-col items-center md:items-start justify-center md:w-2/5 space-y-4 md:space-y-8 flex-shrink-0">
+        <div className="flex flex-col items-center justify-center w-full space-y-4 md:space-y-6 flex-shrink-0">
           {/* Profile Image with Vibrant Ring */}
           <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
@@ -99,12 +99,12 @@ export default function App() {
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className="text-center md:text-left space-y-1 md:space-y-3"
+            className="text-center space-y-1.5 md:space-y-3"
           >
-            <h1 className="text-2xl md:text-5xl font-black text-white tracking-tight uppercase flex items-center justify-center md:justify-start gap-2">
-              <span className="text-xl md:text-4xl">🏏</span> Ankit Rao Sahab
+            <h1 className="text-2xl md:text-4xl font-black text-white tracking-tight uppercase flex items-center justify-center gap-2">
+              <span className="text-xl md:text-3xl">🏏</span> Ankit Rao Sahab
             </h1>
-            <div className="flex items-center justify-center md:justify-start gap-2 text-[#5d5fef] font-black text-[10px] md:text-sm uppercase tracking-[0.2em]">
+            <div className="flex items-center justify-center gap-2 text-[#5d5fef] font-black text-[10px] md:text-sm uppercase tracking-[0.2em]">
               <Users size={14} className="md:w-5 md:h-5" />
               <span>30K+ Active Members</span>
             </div>
@@ -129,11 +129,11 @@ export default function App() {
         </div>
 
         {/* Right Section: Stats & CTA */}
-        <div className="flex-1 w-full flex flex-col justify-start md:justify-center space-y-4 md:space-y-8 overflow-hidden">
+        <div className="w-full flex flex-col justify-start items-center space-y-6 md:space-y-8 overflow-visible">
           {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-2 md:gap-6 w-full">
+          <div className="grid grid-cols-3 gap-3 md:gap-4 w-full">
             {[
-              { label: "Matches", value: "65K+" },
+              { label: "Match Schedule", value: "67,892" },
               { label: "Win Rate", value: "95%" },
               { label: "Rating", value: "4.9★" }
             ].map((stat, i) => (
@@ -142,10 +142,10 @@ export default function App() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.3 + (i * 0.1) }}
-                className="bg-[#1e293b]/40 border border-white/5 rounded-xl md:rounded-3xl p-3 md:p-8 flex flex-col items-center justify-center text-center aspect-square md:aspect-auto md:h-40 shadow-xl backdrop-blur-md group hover:border-[#5d5fef]/30 transition-colors"
+                className="bg-[#1e293b]/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center text-center shadow-xl backdrop-blur-md group hover:border-[#5d5fef]/30 transition-colors"
               >
-                <span className="text-2xl md:text-5xl font-black text-white mb-1 md:mb-2 tracking-tighter">{stat.value}</span>
-                <span className="text-[10px] md:text-sm font-bold text-[#64748b] leading-tight uppercase tracking-widest">{stat.label}</span>
+                <span className="text-xl md:text-3xl font-black text-white mb-1 tracking-tighter">{stat.value}</span>
+                <span className="text-[9px] md:text-xs font-bold text-[#64748b] leading-tight uppercase tracking-wider">{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -155,12 +155,12 @@ export default function App() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="w-full"
+            className="w-full px-2 md:px-0"
           >
             <motion.a 
               href={TELEGRAM_LINK}
               className="w-full bg-gradient-to-r from-[#5d5fef] to-[#312e81] text-white py-5 md:py-9 rounded-xl md:rounded-3xl font-black text-sm md:text-2xl shadow-[0_10px_40px_rgba(93,95,239,0.3)] flex items-center justify-center gap-2 md:gap-4 transition-all active:scale-[0.98] group relative overflow-hidden"
-              animate={{ scale: [1, 1.05, 1] }}
+              animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -174,20 +174,18 @@ export default function App() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="w-full bg-[#1e293b]/20 border border-white/5 rounded-xl md:rounded-3xl p-4 md:p-10 shadow-2xl backdrop-blur-sm"
+            className="w-full bg-[#1e293b]/40 border border-white/5 rounded-xl md:rounded-2xl p-6 py-8 shadow-xl backdrop-blur-md"
           >
-            <div className="grid grid-cols-4 gap-2 md:gap-8">
+            <div className="grid grid-cols-4 gap-2 md:gap-4">
               {[
-                { icon: CheckCircle2, label: "Verified", color: "text-[#22c55e]" },
-                { icon: ShieldCheck, label: "Secure", color: "text-[#5d5fef]" },
+                { icon: CheckCircle2, label: "Verified", color: "text-slate-300" },
+                { icon: ShieldCheck, label: "Secure", color: "text-slate-300" },
                 { icon: TrendingUp, label: "Profitable", color: "text-[#5d5fef]" },
-                { icon: Star, label: "Top Rated", color: "text-yellow-500" }
+                { icon: Star, label: "Top Rated", color: "text-slate-300" }
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center space-y-2 md:space-y-4">
-                  <div className="p-2 md:p-5 rounded-lg md:rounded-2xl bg-white/5 group-hover:bg-white/10 transition-colors">
-                    <item.icon size={20} className={cn("md:w-10 md:h-10", item.color)} strokeWidth={2} />
-                  </div>
-                  <span className="text-[10px] md:text-sm font-bold text-[#64748b] uppercase tracking-tighter md:tracking-wider">{item.label}</span>
+                <div key={i} className="flex flex-col items-center space-y-2.5">
+                  <item.icon size={26} className={cn("md:w-8 md:h-8", item.color)} strokeWidth={1.5} />
+                  <span className="text-[10px] md:text-xs font-medium text-[#94a3b8] capitalize">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -198,12 +196,12 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0 pt-2 md:pt-4 border-t border-white/5"
+            className="flex flex-col items-center justify-center gap-3 pt-6 w-full"
           >
-            <p className="text-[#475569] text-[7px] md:text-[11px] font-bold tracking-wider opacity-60">
-              © 2026 ANKIT RAO SAHAB. ALL RIGHTS RESERVED.
+            <p className="text-[#64748b] text-[10px] md:text-xs font-medium tracking-wide">
+              © 2026 ANKIT RAO SAHAB. All rights reserved.
             </p>
-            <p className="text-[#5d5fef] text-[8px] md:text-[12px] font-black flex items-center gap-1.5 uppercase tracking-widest">
+            <p className="text-[#94a3b8] text-[10px] md:text-xs font-medium flex items-center gap-2">
               <span>🏏</span> Professional Cricket Analysis
             </p>
           </motion.div>
