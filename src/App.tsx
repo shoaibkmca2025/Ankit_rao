@@ -71,7 +71,7 @@ export default function App() {
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
       
-      <div className="h-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center p-4 md:p-8 gap-6 md:gap-12 relative z-10">
+      <div className="h-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-start md:justify-center p-4 md:p-8 gap-6 md:gap-12 relative z-10">
         
         {/* Left Section: Profile & Identity */}
         <div className="flex flex-col items-center md:items-start justify-center md:w-2/5 space-y-4 md:space-y-8 flex-shrink-0">
@@ -129,7 +129,7 @@ export default function App() {
         </div>
 
         {/* Right Section: Stats & CTA */}
-        <div className="flex-1 w-full flex flex-col justify-center space-y-4 md:space-y-8 overflow-hidden">
+        <div className="flex-1 w-full flex flex-col justify-start md:justify-center space-y-4 md:space-y-8 overflow-hidden">
           {/* Stats Grid */}
           <div className="grid grid-cols-3 gap-2 md:gap-6 w-full">
             {[
@@ -157,14 +157,16 @@ export default function App() {
             transition={{ delay: 0.6 }}
             className="w-full"
           >
-            <a 
+            <motion.a 
               href={TELEGRAM_LINK}
-              className="w-full bg-gradient-to-r from-[#5d5fef] to-[#312e81] text-white py-4 md:py-8 rounded-xl md:rounded-3xl font-black text-sm md:text-2xl shadow-[0_10px_40px_rgba(93,95,239,0.3)] flex items-center justify-center gap-2 md:gap-4 transition-all active:scale-[0.98] group relative overflow-hidden"
+              className="w-full bg-gradient-to-r from-[#5d5fef] to-[#312e81] text-white py-5 md:py-9 rounded-xl md:rounded-3xl font-black text-sm md:text-2xl shadow-[0_10px_40px_rgba(93,95,239,0.3)] flex items-center justify-center gap-2 md:gap-4 transition-all active:scale-[0.98] group relative overflow-hidden"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               <Send size={18} className="md:w-8 md:h-8 fill-white" />
               Join Telegram Channel
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Features Grid */}
