@@ -161,7 +161,7 @@ export default function App() {
               href={TELEGRAM_LINK}
               className="w-full bg-gradient-to-r from-[#5d5fef] to-[#312e81] text-white py-5 md:py-9 rounded-xl md:rounded-3xl font-black text-sm md:text-2xl shadow-[0_10px_40px_rgba(93,95,239,0.3)] flex items-center justify-center gap-2 md:gap-4 transition-all active:scale-[0.98] group relative overflow-hidden"
               animate={{ scale: [1, 1.03, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               <Send size={18} className="md:w-8 md:h-8 fill-white" />
